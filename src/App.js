@@ -1,7 +1,7 @@
-import React from "react";
-import "./App.css";
-import { Col, Row } from "react-bootstrap";
-import Login from "./components/Login";
+import React from "react"
+import "./App.css"
+import { Col, Row } from "react-bootstrap"
+import Login from "./components/Login"
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
         </Col>
       </Row>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

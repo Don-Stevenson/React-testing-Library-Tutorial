@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import { Form, Button, Alert } from "react-bootstrap";
+import React, { useState } from "react"
+import { Form, Button, Alert } from "react-bootstrap"
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [showUser, setShowUser] = useState(false);
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
+  const [showUser, setShowUser] = useState(false)
 
-  const handleSubmit = (e) => {
-    setShowUser(false);
-    e.preventDefault();
+  const handleSubmit = e => {
+    setShowUser(false)
+    e.preventDefault()
     if (validateEmail(email)) {
-      setShowUser(true);
-      setError("");
-      return;
+      setShowUser(true)
+      setError("")
+      return
     }
-    setError("Email is not valid");
-    return false;
-  };
+    setError("Email is not valid")
+    return false
+  }
 
   const resetForm = () => {
-    setEmail("");
-    setPassword("");
-    setShowUser(false);
-  };
+    setEmail("")
+    setPassword("")
+    setShowUser(false)
+  }
 
   return (
     <>
@@ -45,7 +45,7 @@ const Login = () => {
             type="email"
             placeholder="Enter email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
           />
         </Form.Group>
 
@@ -55,7 +55,7 @@ const Login = () => {
             type="password"
             placeholder="Password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={e => setPassword(e.target.value)}
           />
         </Form.Group>
 
@@ -72,15 +72,15 @@ const Login = () => {
         </Button>
       </Form>
     </>
-  );
-};
+  )
+}
 
-export const validateEmail = (email) => {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+export const validateEmail = email => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
   if (regex.test(email)) {
-    return true;
+    return true
   }
-  return false;
-};
+  return false
+}
 
-export default Login;
+export default Login
