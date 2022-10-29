@@ -42,6 +42,7 @@ describe("Test the Login Component", () => {
     const error = screen.getByText("Email is not valid")
     expect(error).toBeInTheDocument()
   })
+  
 
   test("should be able to reset the form ", () => {
     const { getByLabelText, getByTestId } = render(<Login />)
