@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react"
+import { render, screen, fireEvent } from "@testing-library/react"
 import App from "./App"
 
 describe("Test the App Component", () => {
@@ -11,5 +11,11 @@ describe("Test the App Component", () => {
     const { getByLabelText } = render(<App />)
     const childElement = getByLabelText("Email")
     expect(childElement).toBeTruthy()
+  })
+  test("Test button click in the document", async () => {
+    render(<App />)
+    fireEvent.click(screen.getByText("Submit"))
+    const items = screen.findAllByAltText(/Item #[0-9]: /)
+    expect(items).toBeTruthy()
   })
 })
